@@ -1,0 +1,207 @@
+//----------------------------------*\
+//----------------------------------*\
+// LAYOUT
+body {
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0;
+  background-color: #fff;
+  // font-family: "Montserrat";
+}
+
+html {
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    transition: 0.4s ease-in-out;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #fff;
+    transition: 0.4s ease-in-out;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #00000030;
+    border-radius: 20px;
+    transition: 0.4s ease-in-out;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #00000030;
+    transition: 0.4s ease-in-out;
+  }
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  outline: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+
+  li {
+    list-style: none;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-check:focus + .btn,
+.btn:focus {
+  box-shadow: none;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+input,
+textarea {
+  border: none;
+  outline: none;
+  width: 100%;
+  box-shadow: none;
+}
+
+label {
+  padding: 0;
+  margin: 0;
+}
+
+//margin-bottom => m-b-10
+$spaceamounts: (
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+);
+$sides: (bottom, top, left, right);
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .m-#{str-slice($side, 0, 1)}-#{$space} {
+      margin-#{$side}: #{$space}px;
+    }
+  }
+}
+
+//padding-bottom => m-b-10
+$spaceamounts: (
+        0,
+        5,
+        10,
+        15,
+        20,
+        25,
+        30,
+        35,
+        40,
+        45,
+        50,
+        55,
+        60,
+        65,
+        70,
+        75,
+        80,
+        85,
+        90,
+        95,
+        100
+);
+$sides: (bottom, top, left, right);
+@each $space in $spaceamounts {
+  @each $side in $sides {
+    .p-#{str-slice($side, 0, 1)}-#{$space} {
+      padding-#{$side}: #{$space}px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1360px;
+  }
+}
+
+.site-wrapper {
+  background: #f7f7f7;
+  flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+  // ::-webkit-scrollbar {
+  //   width: 0;
+  // }
+}
+
+$main: #3d6694;
+$dark: #091925;
+$green: #00a099;
+$grey: #707984;
+$red: #d00a0a;
+
+body {
+  font-family: Inter;
+  font-weight: 600;
+  font-size: 14px;
+  color: $dark;
+}
+
+//----------------------------------*/
+@import "fonts";
+@import "header";
+@import "footer";
+@import "index";
